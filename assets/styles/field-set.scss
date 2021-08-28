@@ -1,0 +1,64 @@
+.field-set {
+  margin-bottom: 1em;
+  padding: 0;
+  border: none;
+  font-size: 1.5rem;
+  position: relative;
+  width: 100%;
+
+  & .field-set__label {
+    display: block;
+    padding: 0 0.5em;
+    font-size: 1em;
+    position: absolute;
+    top: 1em;
+    left: 0.5em;
+    transition: top 0.2s ease-in-out;
+    cursor: text;
+  }
+
+  & .field-set__input {
+    display: block;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100%;
+    padding: 1em;
+  }
+
+  & .field-set__error-message {
+    position: absolute;
+    bottom: -1.25em;
+    color: var(--color-warn);
+    font-size: 0.75em;
+    margin: 0.5em 0 0 1.25em;
+  }
+}
+
+.field-set--active {
+  & .field-set__input {
+    border-color: var(--color-primary);
+  }
+
+  & .field-set__label {
+    top: -0.5em;
+    color: var(--color-primary);
+    background-color: white;
+  }
+}
+
+.field-set--required {
+  & .field-set__label::after {
+    content: " *";
+  }
+}
+
+.field-set--error {
+  & .field-set__input {
+    border-color: var(--color-warn);
+  }
+
+  & .field-set__label {
+    color: var(--color-warn);
+  }
+}
